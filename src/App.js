@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   const [actions,setActions] = useState(actionsState)
-  const [penColoe,setPenColor] = useState(penColorState)
+  const [penColor,setPenColor] = useState(penColorState)
   const [penSize,setPenSize] = useState(penSizeState)
   const [options,setOptions] = useState(optionsState)
 
@@ -14,11 +14,35 @@ function App() {
 
   })
 
+  const changeActiveHandler = (id) => {
+    const cloneActions = [...actions]
+    cloneActions.forEach(item => item.action = false)
+    
+    cloneActions.forEach(item => {
+      if(item.id == id) item.action = true
+    })
+
+    setActions(cloneActions)
+  }
+
+  const changeColorHandler = () => {
+
+  }
+
+  const changeSizeHandler = () => {
+
+  }
 
 
   return (
     <>
-      <Header />
+      <Header 
+      actions={actions} 
+      options={options}
+      changeColor={changeColorHandler}
+      changeSizeHandler={changeSizeHandler}
+      changeActiveHandler={changeActiveHandler}
+      />
     </>
   );
 }

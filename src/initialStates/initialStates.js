@@ -1,32 +1,40 @@
 export const actionsState = [{
-    name : 'Pencil',
-    imgeUrl : './adress',
+    id : 1,
+    title : 'Pencil',
+    imageUrl : './assets/pencile.svg',
+    fontSize : '24px',
     action : false
   },
   {
-    name : 'Pen',
-    imgeUrl : './adress',
+    id : 2,
+    title : 'Pen',
+    imageUrl : './assets/pen.svg',
+    fontSize : '18px',
     action : false
   },
   {
-    name : 'Eraser',
-    imgeUrl : './adress',
+    id : 3,
+    title : 'Eraser',
+    imageUrl : './assets/eraser.svg',
     action : false
   },
   {
-    name : 'Cursor',
-    imgeUrl : './adress',
+    id : 4,
+    title : 'Cursor',
+    imageUrl : './assets/cursor.svg',
     action : true
 },]
 
 export const optionsState = [{
-    name : 'color',
-    imageUrl : 'address',
+    id : 1,
+    title : 'color',
+    imageUrl : './assets/color-palet.svg',
     action : false
   },
   {
-    name : 'Screen Shot',
-    imageUrl : 'address',
+    id : 2,
+    title : 'Screen Shot',
+    imageUrl : './assets/Camera-Screen-Shot.svg',
     action : false
   },
 ]
