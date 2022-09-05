@@ -40,5 +40,3 @@ export const optionsState = [{
 ]
 
 export const penColorState = '#000'
-
-export const penSizeState = '18px'

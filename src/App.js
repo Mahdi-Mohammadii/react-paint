@@ -7,7 +7,6 @@ import './App.css';
 function App() {
   const [actions,setActions] = useState(actionsState)
   const [penColor,setPenColor] = useState(penColorState)
-  const [penSize,setPenSize] = useState(penSizeState)
   const [options,setOptions] = useState(optionsState)
 
   useEffect(() => {
@@ -29,10 +28,6 @@ function App() {
 
   }
 
-  const changeSizeHandler = () => {
-
-  }
-
 
   return (
     <>
@@ -40,7 +35,6 @@ function App() {
       actions={actions} 
       options={options}
       changeColor={changeColorHandler}
-      changeSizeHandler={changeSizeHandler}
       changeActiveHandler={changeActiveHandler}
       />
     </>
