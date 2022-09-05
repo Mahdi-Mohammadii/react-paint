@@ -1,4 +1,5 @@
-.header__actions{
-    display: flex;
-    width: 680px;
+.header__actions {
+  display: flex;
+  max-width: 1660px;
+  margin: auto;
 }
