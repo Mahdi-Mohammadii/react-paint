@@ -9,7 +9,20 @@ import Header from "./components/header/header";
 import Main from "./components/main/main";
 import { Cursor } from "./components/cursor/cursor";
 
+import { createRef, useRef } from "react";
+import * as htmlToImage from "html-to-image";
+
+const createFileName = (extension = "", ...names) => {
+  if (!extension) {
+    return "";
+  }
+
+  return `${names.join("")}.${extension}`;
+};
+
 function App() {
+  const ref = useRef(null);
+
   const [actions, setActions] = useState(actionsState);
   const [active, setActive] = useState("Cursor");
   const [penSize, setPenSize] = useState();
@@ -18,7 +31,9 @@ function App() {
   const [colors, setColors] = useState(optionsState);
   const [showPicker, setShowPicker] = useState(false);
 
-  useEffect(() => {});
+  useEffect(() => {
+    if(actions[4].action == true) downloadScreenshot()
+  });
 
   const changeActiveHandler = (id) => {
     const cloneActions = [...actions];
@@ -49,6 +64,20 @@ function App() {
     setShowPicker(false);
   }
 
+  const takeScreenShot = async (node) => {
+    const dataURI = await htmlToImage.toJpeg(node);
+    return dataURI;
+  };
+
+  const download = (image, { name = "img", extension = "jpg" } = {}) => {
+    const a = document.createElement("a");
+    a.href = image;
+    a.download = createFileName(extension, name);
+    a.click();
+  };
+
+  const downloadScreenshot = () => takeScreenShot(ref.current).then(download);
+
   return (
     <>
       <Header
@@ -63,6 +92,7 @@ function App() {
         changeActiveHandler={changeActiveHandler}
       />
       <Main
+        refA={ref}
         type={active}
         render={(mouse) => (
           <Cursor pos={mouse} type={active} color={penColor} size={penSize} />

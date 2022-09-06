@@ -16,8 +16,9 @@ import "./main.css";
   render() {
     return (
       <div
+        ref={this.props.refA}
         className={this.props.type == "Cursor" ? null : "main"}
-        style={{ height: "100vh" }}
+        style={{ height: "100vh", background : "#fff" }}
         onMouseMove={this.handleMouseMove}
       >
         {this.props.render(this.state)}

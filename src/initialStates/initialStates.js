@@ -22,12 +22,12 @@ export const actionsState = [{
     id : 4,
     title : 'Cursor',
     imageUrl : './assets/cursor.svg',
-    action : false
+    action : true
 }, {
   id : 5,
   title : 'Screen Shot',
   imageUrl : './assets/Camera-Screen-Shot.svg',
-  action : true
+  action : false
 },]
 
 export const optionsState = [{
