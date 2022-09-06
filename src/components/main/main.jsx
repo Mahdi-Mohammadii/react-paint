@@ -17,6 +17,7 @@ export default class Main extends React.Component {
     return (
       <div
         className={this.props.type == "Cursor" ? null : "main"}
+        style={{ height: "100vh" }}
         onMouseMove={this.handleMouseMove}
       >
       </div>
