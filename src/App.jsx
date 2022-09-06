@@ -12,6 +12,7 @@ import { Cursor } from "./components/cursor/cursor";
 
 function App() {
   const [actions, setActions] = useState(actionsState);
+  const [penSize, setPenSize] = useState();
   const [penColor, setPenColor] = useState(penColorState);
   const [options, setOptions] = useState(optionsState);
 
