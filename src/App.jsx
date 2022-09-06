@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import {
   actionsState,
   optionsState,
@@ -10,7 +10,7 @@ import useMousePosition from "./components/footer/footer";
 import Main from "./components/main/main";
 import { Cursor } from "./components/cursor/cursor";
 
-import { createRef, useRef } from "react";
+import { useRef } from "react";
 import * as htmlToImage from "html-to-image";
 
 const createFileName = (extension = "", ...names) => {
@@ -33,10 +33,13 @@ function App() {
   const [showPicker, setShowPicker] = useState(false);
   const { posX, posY } = useMousePosition();
 
-  useEffect(() => {
+  const screenShot = useCallback(() => {
     if(actions[4].action == true) downloadScreenshot()
-  });
+  },[])
 
+  useEffect(() => {
+    screenShot()
+  },[actions]);
 
   const changeActiveHandler = (id) => {
     const cloneActions = [...actions];

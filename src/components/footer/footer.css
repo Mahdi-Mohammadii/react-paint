@@ -3,7 +3,7 @@
    
     background-color: #A5C2C0;
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0px;
    
