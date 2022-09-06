@@ -47,6 +47,7 @@ function App() {
       <Main
         type={active}
         render={(mouse) => (
+          <Cursor pos={mouse} type={active} color={penColor} size={penSize} />
         )}
       />
     </>
