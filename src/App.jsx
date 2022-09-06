@@ -6,6 +6,7 @@ import {
 } from "./initialStates/initialStates";
 
 import Header from "./components/header/header";
+import useMousePosition from "./components/footer/footer";
 import Main from "./components/main/main";
 import { Cursor } from "./components/cursor/cursor";
 
@@ -30,10 +31,12 @@ function App() {
   const [options, setOptions] = useState(optionsState);
   const [colors, setColors] = useState(optionsState);
   const [showPicker, setShowPicker] = useState(false);
+  const { posX, posY } = useMousePosition();
 
   useEffect(() => {
     if(actions[4].action == true) downloadScreenshot()
   });
+
 
   const changeActiveHandler = (id) => {
     const cloneActions = [...actions];
@@ -98,6 +101,11 @@ function App() {
           <Cursor pos={mouse} type={active} color={penColor} size={penSize} />
         )}
       />
+
+      <footer className="Footer">
+        <h2 className=" h2">{`X : ${posX}`}</h2>
+        <h2 className=" h2">{`Y : ${posY}`}</h2>
+      </footer>
     </>
   );
 }

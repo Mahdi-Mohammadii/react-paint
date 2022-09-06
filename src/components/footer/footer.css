@@ -1,0 +1,16 @@
+
+.Footer{
+   
+    background-color: #A5C2C0;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+   
+  }
+  .h2{
+    font-family: sans-serif;
+    font-size: 10px;
+    padding: 0 5px;
+    margin: 10px;
+  }
