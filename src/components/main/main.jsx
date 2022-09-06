@@ -20,6 +20,7 @@ export default class Main extends React.Component {
         style={{ height: "100vh" }}
         onMouseMove={this.handleMouseMove}
       >
+        {this.props.render(this.state)}
       </div>
     );
   }
