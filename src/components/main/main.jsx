@@ -12,6 +12,13 @@ export default class Main extends React.Component {
       y: event.clientY,
     });
   }
+  render() {
+    return (
+      <div
+      >
+      </div>
+    );
+  }
 }
 
 export default Main
