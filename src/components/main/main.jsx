@@ -1,4 +1,4 @@
-const Main = () => {
+import React from "react";
 
 }
 
