@@ -3,7 +3,6 @@ import {
   actionsState,
   optionsState,
   penColorState,
-  penSizeState,
 } from "./initialStates/initialStates";
 
 import Header from "./components/header/header";

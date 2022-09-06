@@ -1,8 +1,11 @@
 .header__actions {
   display: flex;
   max-width: 1660px;
-  margin: auto;
 }
 .header__options {
   display: flex;
+}
+
+.header__options div:last-of-type{
+  margin-right: 0 ;
 }
