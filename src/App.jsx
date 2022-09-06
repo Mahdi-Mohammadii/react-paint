@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   actionsState,
   optionsState,
@@ -34,12 +34,12 @@ function App() {
   const { posX, posY } = useMousePosition();
 
   const screenShot = useCallback(() => {
-    if(actions[4].action == true) downloadScreenshot()
-  },[])
+    if (actions[4].action == true) downloadScreenshot();
+  }, [actions]);
 
   useEffect(() => {
-    screenShot()
-  },[actions]);
+    screenShot();
+  }, [actions]);
 
   const changeActiveHandler = (id) => {
     const cloneActions = [...actions];
@@ -64,11 +64,11 @@ function App() {
   };
   const chooseColorHandler = (color) => {
     setPenColor(color.rgb);
-  }
+  };
 
   const closeColorHandler = (id) => {
     setShowPicker(false);
-  }
+  };
 
   const takeScreenShot = async (node) => {
     const dataURI = await htmlToImage.toJpeg(node);

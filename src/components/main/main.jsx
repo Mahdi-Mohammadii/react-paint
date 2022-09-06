@@ -1,6 +1,6 @@
 import React from "react";
 import "./main.css";
- class Main extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.handleMouseMove = this.handleMouseMove.bind(this);
@@ -18,7 +18,7 @@ import "./main.css";
       <div
         ref={this.props.refA}
         className={this.props.type == "Cursor" ? null : "main"}
-        style={{ height: "100vh", background : "#fff" }}
+        style={{ height: "80vh", background: "#fff" }}
         onMouseMove={this.handleMouseMove}
       >
         {this.props.render(this.state)}
@@ -27,4 +27,4 @@ import "./main.css";
   }
 }
 
-export default Main
+export default Main;
