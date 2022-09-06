@@ -7,9 +7,13 @@ import {
 } from "./initialStates/initialStates";
 
 import Header from "./components/header/header";
+import Main from "./components/main/main";
+import { Cursor } from "./components/cursor/cursor";
 
 function App() {
   const [actions, setActions] = useState(actionsState);
+  const [active, setActive] = useState("Cursor");
+  const [penSize, setPenSize] = useState();
   const [penColor, setPenColor] = useState(penColorState);
   const [options, setOptions] = useState(optionsState);
 
@@ -20,7 +24,11 @@ function App() {
     cloneActions.forEach((item) => (item.action = false));
 
     cloneActions.forEach((item) => {
-      if (item.id == id) item.action = true;
+      if (item.id == id) {
+        item.action = true;
+        setActive(item.title);
+        setPenSize(item.fontSize);
+      }
     });
 
     setActions(cloneActions);
@@ -35,6 +43,12 @@ function App() {
         options={options}
         changeColor={changeColorHandler}
         changeActiveHandler={changeActiveHandler}
+      />
+      <Main
+        type={active}
+        render={(mouse) => (
+          <Cursor pos={mouse} type={active} color={penColor} size={penSize} />
+        )}
       />
     </>
   );
