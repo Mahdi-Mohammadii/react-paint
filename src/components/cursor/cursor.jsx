@@ -16,4 +16,12 @@ export const Cursor = (props) => {
     height: size,
     border: "1px solid black",
   };
+
+  if (type == "Eraser") {
+    style.backgroundColor = "#fff";
+  } else if (type == "Pencil" || type == "Pen") {
+    style.borderRadius = "50%";
+  } else {
+    style = { cursor: "curser" };
+  }
 };
