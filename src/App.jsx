@@ -24,7 +24,11 @@ function App() {
     cloneActions.forEach((item) => (item.action = false));
 
     cloneActions.forEach((item) => {
-      if (item.id == id) item.action = true;
+      if (item.id == id) {
+        item.action = true;
+        setActive(item.title);
+        setPenSize(item.fontSize);
+      }
     });
 
     setActions(cloneActions);
@@ -39,6 +43,8 @@ function App() {
         options={options}
         changeColor={changeColorHandler}
         changeActiveHandler={changeActiveHandler}
+      />
+      <Main
       />
     </>
   );
