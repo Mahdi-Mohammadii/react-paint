@@ -3,6 +3,7 @@ import "./main.css";
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
     this.state = { x: 0, y: 0 };
   }
 
