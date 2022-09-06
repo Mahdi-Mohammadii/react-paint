@@ -16,6 +16,8 @@ function App() {
   const [penSize, setPenSize] = useState();
   const [penColor, setPenColor] = useState(penColorState);
   const [options, setOptions] = useState(optionsState);
+  const [colors, setColors] = useState(optionsState);
+  const [showPicker, setShowPicker] = useState(false);
 
   useEffect(() => {});
 
@@ -34,14 +36,31 @@ function App() {
     setActions(cloneActions);
   };
 
-  const changeColorHandler = () => {};
+  const changeColorHandler = () => {
+    const cloneOptions = [...colors];
+    cloneOptions.forEach((item) => (item.action = !item.action));
+    setColors(cloneOptions);
+    setShowPicker(!showPicker);
+  };
+  const chooseColorHandler = (color) => {
+    setPenColor(color.rgb);
+  }
+
+  const closeColorHandler = (id) => {
+    setShowPicker(false);
+  }
 
   return (
     <>
       <Header
         actions={actions}
         options={options}
+        colors={colors}
+        chooseColor={chooseColorHandler}
         changeColor={changeColorHandler}
+        closeColor={closeColorHandler}
+        penColor={penColor}
+        showPicker={showPicker}
         changeActiveHandler={changeActiveHandler}
       />
       <Main
