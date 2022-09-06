@@ -45,6 +45,7 @@ function App() {
         changeActiveHandler={changeActiveHandler}
       />
       <Main
+        type={active}
       />
     </>
   );
