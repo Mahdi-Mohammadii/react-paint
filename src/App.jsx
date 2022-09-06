@@ -46,6 +46,8 @@ function App() {
       />
       <Main
         type={active}
+        render={(mouse) => (
+        )}
       />
     </>
   );
