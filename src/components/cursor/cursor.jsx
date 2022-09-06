@@ -24,4 +24,6 @@ export const Cursor = (props) => {
   } else {
     style = { cursor: "curser" };
   }
+
+  return <div style={style}></div>;
 };
