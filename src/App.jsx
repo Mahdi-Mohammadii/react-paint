@@ -7,6 +7,8 @@ import {
 } from "./initialStates/initialStates";
 
 import Header from "./components/header/header";
+import Main from "./components/main/main";
+import { Cursor } from "./components/cursor/cursor";
 
 function App() {
   const [actions, setActions] = useState(actionsState);
