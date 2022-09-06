@@ -17,6 +17,7 @@ export default class Main extends React.Component {
     return (
       <div
         className={this.props.type == "Cursor" ? null : "main"}
+        onMouseMove={this.handleMouseMove}
       >
       </div>
     );
