@@ -12,6 +12,10 @@
   border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
+.actions-items:last-child {
+  width: 110px;
+}
+
 .actions-items img {
   width: 40px;
   height: 40px;
