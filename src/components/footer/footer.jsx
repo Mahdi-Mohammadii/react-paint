@@ -9,7 +9,7 @@ export const useMousePosition = () => {
       const posY = e.clientY;
       setMousePos({ posX, posY });
     };
-    document.addEventListener("mousemove", getMousePos);
+    document.querySelector("#main").addEventListener("mousemove", getMousePos);
     return function cleanup() {
       document.removeEventListener("mousemove", getMousePos);
     };
