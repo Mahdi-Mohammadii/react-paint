@@ -16,6 +16,7 @@ class Main extends React.Component {
   render() {
     return (
       <div
+	  id="main"
         ref={this.props.refA}
         className={this.props.type == "Cursor" ? null : "main"}
         style={{ height: "80vh", background: "#fff" }}
