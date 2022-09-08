@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./main.css";
 const Main = (props) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   handleMouseMove(event) {
     this.setState({
