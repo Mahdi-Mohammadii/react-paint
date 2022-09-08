@@ -3,12 +3,12 @@ import "./main.css";
 const Main = (props) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  handleMouseMove(event) {
-    this.setState({
+  const handleMouseMove = (event) => {
+    setPosition({
       x: event.clientX,
       y: event.clientY,
     });
-  }
+  };
   render() {
     return (
       <div
