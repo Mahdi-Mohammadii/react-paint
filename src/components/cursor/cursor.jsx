@@ -3,6 +3,10 @@ export const Cursor = ({ pos, type, color, size }) => {
     position: "absolute",
     left: pos.x,
     top: pos.y,
+    backgroundColor:
+      type === "Eraser"
+        ? "#fff"
+        : `rgba(${color.r},${color.g},${color.b},${color.a})`,
     cursor: "none",
     width: size,
     height: size,
