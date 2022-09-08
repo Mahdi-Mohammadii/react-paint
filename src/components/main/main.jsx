@@ -9,7 +9,7 @@ const Main = (props) => {
       y: event.clientY,
     });
   };
-  render() {
+
     return (
       <div
 	  id="main"
