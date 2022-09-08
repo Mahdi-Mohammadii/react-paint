@@ -7,6 +7,7 @@ export const Cursor = ({ pos, type, color, size }) => {
       type === "Eraser"
         ? "#fff"
         : `rgba(${color.r},${color.g},${color.b},${color.a})`,
+    borderRadius: type === "Pencil" || type === "Pen" ? "50%" : "0",
     cursor: "none",
     width: size,
     height: size,
