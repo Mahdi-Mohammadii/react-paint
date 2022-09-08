@@ -1,11 +1,8 @@
 export const Cursor = ({ pos, type, color, size }) => {
   let style = {
     position: "absolute",
-    left: position.x,
-    top: position.y,
-    backgroundColor: color,
-    border: "none",
-    borderRadius: "0",
+    left: pos.x,
+    top: pos.y,
     cursor: "none",
     width: size,
     height: size,
