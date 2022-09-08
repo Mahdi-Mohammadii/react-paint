@@ -10,17 +10,17 @@ const Main = (props) => {
     });
   };
 
-    return (
-      <div
-	  id="main"
-        ref={this.props.refA}
-        className={this.props.type == "Cursor" ? null : "main"}
-        style={{ height: "80vh", background: "#fff" }}
-        onMouseMove={this.handleMouseMove}
-      >
-        {this.props.render(this.state)}
-      </div>
-    );
+  return (
+    <div
+      id="main"
+      ref={props.refA}
+      className={props.type == "Cursor" ? null : "main"}
+      style={{ height: "80vh", background: "#fff" }}
+      onMouseMove={handleMouseMove}
+    >
+      {props.render(position)}
+    </div>
+  );
 };
 
 export default Main;
