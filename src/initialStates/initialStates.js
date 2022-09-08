@@ -16,6 +16,7 @@ export const actionsState = [{
     id : 3,
     title : 'Eraser',
     imageUrl : './assets/eraser.svg',
+    fontSize:"45px",
     action : false
   },
   {
