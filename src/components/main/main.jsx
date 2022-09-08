@@ -1,11 +1,6 @@
 import React from "react";
 import "./main.css";
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.state = { x: 0, y: 0 };
-  }
+const Main = (props) => {
 
   handleMouseMove(event) {
     this.setState({
@@ -25,7 +20,6 @@ class Main extends React.Component {
         {this.props.render(this.state)}
       </div>
     );
-  }
-}
+};
 
 export default Main;
