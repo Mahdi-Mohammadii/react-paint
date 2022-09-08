@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import {
   actionsState,
   optionsState,
@@ -10,7 +10,6 @@ import useMousePosition from "./components/footer/footer";
 import Main from "./components/main/main";
 import { Cursor } from "./components/cursor/cursor";
 
-import { useRef } from "react";
 import * as htmlToImage from "html-to-image";
 
 const createFileName = (extension = "", ...names) => {
