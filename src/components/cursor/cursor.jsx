@@ -1,9 +1,4 @@
-export const Cursor = (props) => {
-  const position = props.pos;
-  const type = props.type;
-  const color = props.color;
-  const size = props.size;
-
+export const Cursor = ({ pos, type, color, size }) => {
   let style = {
     position: "absolute",
     left: position.x,
