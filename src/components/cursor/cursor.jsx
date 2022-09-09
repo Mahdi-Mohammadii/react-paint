@@ -1,4 +1,6 @@
-export const Cursor = ({ pos, type, color, size }) => {
+import "./cursor.css";
+
+export const Cursor = ({ pos, type, color, size, isHovering }) => {
   let style =
     type === "Cursor"
       ? { cursor: "default" }
@@ -17,5 +19,5 @@ export const Cursor = ({ pos, type, color, size }) => {
           border: "1px solid black",
         };
 
-  return <div style={style}></div>;
+  return <div className={isHovering ? "show" : "hidden"} style={style}></div>;
 };
