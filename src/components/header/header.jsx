@@ -1,20 +1,30 @@
-import React from 'react'
-import HeaderActions from '../header-actions/header-actions'; 
-import './header.css';
-const Header = (props) => {
-    
+import React from "react";
+import HeaderActions from "../header-actions/header-actions";
+import "./header.css";
+const Header = ({
+  actions,
+  colors,
+  changeActiveHandler,
+  changeColor,
+  penColor,
+  showPicker,
+  chooseColor,
+  closeColor,
+}) => {
   return (
-    <header className='header'>
-      <HeaderActions actions={props.actions}
-       colors={props.colors}
-        active={props.changeActiveHandler}
-         change={props.changeColor}
-          penColor={props.penColor}
-           showPicker={props.showPicker}
-            chooseColor={props.chooseColor}
-            closeColor={props.closeColor} />
+    <header className="header">
+      <HeaderActions
+        actions={actions}
+        colors={colors}
+        active={changeActiveHandler}
+        change={changeColor}
+        penColor={penColor}
+        showPicker={showPicker}
+        chooseColor={chooseColor}
+        closeColor={closeColor}
+      />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

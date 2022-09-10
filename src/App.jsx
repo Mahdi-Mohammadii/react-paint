@@ -31,14 +31,7 @@ function App() {
   const [colors, setColors] = useState(optionsState);
   const [showPicker, setShowPicker] = useState(false);
   const { posX, posY } = useMousePosition();
-
-  const screenShot = useCallback(() => {
-    if (actions[4].action == true) downloadScreenshot();
-  }, [actions]);
-
-  useEffect(() => {
-    screenShot();
-  }, [actions]);
+  const [isHovering, setIsHovering] = useState(false);
 
   const changeActiveHandler = (id) => {
     const cloneActions = [...actions];
@@ -83,6 +76,14 @@ function App() {
 
   const downloadScreenshot = () => takeScreenShot(ref.current).then(download);
 
+  const screenShot = useCallback(() => {
+    if (actions[4].action == true) downloadScreenshot();
+  }, [actions]);
+
+  useEffect(() => {
+    screenShot();
+  }, [actions]);
+
   return (
     <>
       <Header
@@ -98,9 +99,16 @@ function App() {
       />
       <Main
         refA={ref}
+        setIsHovering={setIsHovering}
         type={active}
         render={(mouse) => (
-          <Cursor pos={mouse} type={active} color={penColor} size={penSize} />
+          <Cursor
+            isHovering={isHovering}
+            pos={mouse}
+            type={active}
+            color={penColor}
+            size={penSize}
+          />
         )}
       />
 
